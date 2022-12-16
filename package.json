@@ -1,0 +1,25 @@
+{
+  "name": "bonk-language",
+  "displayName": "Bonk Language",
+  "description": "Syntax highlighting for the Bonk language.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "bonk",
+      "aliases": ["Bonk", "bonk"],
+      "extensions": [".bonk"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "bonk",
+      "scopeName": "source.bonk",
+      "path": "./syntaxes/bonk.tmLanguage.json"
+    }]
+  }
+}

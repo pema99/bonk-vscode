@@ -1,0 +1,81 @@
+{
+    "scopeName": "source.bonk",
+    "patterns": [{ "include": "#expression" }],
+    "repository": {
+        "expression": {
+            "patterns": [
+                { "include": "#paren-expression" },
+                { "include": "#comment" },
+                { "include": "#keyword" },
+                { "include": "#number" },
+                { "include": "#operator" },
+                { "include": "#string" },
+                { "include": "#char" }
+            ]
+        },
+        "paren-expression": {
+            "begin": "\\(",
+            "end": "\\)",
+            "beginCaptures": {
+              "0": { "name": "punctuation.paren.open" }
+            },
+            "endCaptures": {
+              "0": { "name": "punctuation.paren.close" }
+            },
+            "name": "expression.group",
+            "patterns": [{ "include": "#expression" }]
+          },
+        "comment": {
+          "name": "comment",
+          "begin": "//",
+          "end": "\n"
+        },
+        "keyword": {
+          "name": "keyword",
+          "match": "\\b(if|then|else|let|rec|and|in|with|sum|match|member|of|class)\\b"
+        },
+        "number": {
+          "patterns": [
+            {"include": "#decimal"}
+          ]
+        },
+        "decimal": {
+          "name": "constant.numeric.decimal",
+          "match": "\\b[0-9][0-9_]*(\\.[0-9]+)?\\b"
+        },
+        "operator": {
+            "patterns": [{
+                "name": "keyword.operator",
+                "match": "\\+|-|\\*|\\/|=|&|\\||<|>|!|:|\\$"
+            }]
+        },
+        "string": {
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin"
+				}
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end"
+				}
+			},
+			"name": "string.quoted.double"
+		},
+		"char": {
+			"patterns": [
+				{
+					"name": "char",
+					"match": "('\\\\?.')",
+					"captures": {
+						"1": {
+							"name": "string.quoted.single"
+						}
+					}
+				}
+			]
+		}
+    }
+}
