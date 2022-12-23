@@ -4,7 +4,7 @@
   "displayName": "Bonk Language",
   "description": "Syntax highlighting for the Bonk language.",
   "icon": "images/bonk.png",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "repository": "https://github.com/pema99/bonk-vscode",
   "engines": {
     "vscode": "^1.74.0"

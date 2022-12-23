@@ -10,7 +10,8 @@
                 { "include": "#number" },
                 { "include": "#operator" },
                 { "include": "#string" },
-                { "include": "#char" }
+                { "include": "#char" },
+                { "include": "#boolean" }
             ]
         },
         "paren-expression": {
@@ -32,7 +33,7 @@
         },
         "keyword": {
           "name": "keyword",
-          "match": "\\b(if|then|else|let|rec|and|in|with|sum|match|member|of|class)\\b"
+          "match": "\\b(if|then|else|let|rec|and|in|with|sum|match|member|of|class|import|memoize|impure)\\b"
         },
         "number": {
           "patterns": [
@@ -42,6 +43,10 @@
         "decimal": {
           "name": "constant.numeric.decimal",
           "match": "\\b[0-9][0-9_]*(\\.[0-9]+)?\\b"
+        },
+        "boolean": {
+          "name": "constant.language.boolean",
+          "match": "\\b(true|false)\\b"
         },
         "operator": {
             "patterns": [{
